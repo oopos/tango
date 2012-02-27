@@ -63,6 +63,11 @@ void testLocking()
                     lockCount++;
                 }
             }
+			synchronized (mutex)
+			{
+				Stdout.formatln("test ...{}", lockCount);
+			}
+			//Thread.sleep(1_00_00);
         }
         catch (tango.core.Exception.SyncException e)
         {

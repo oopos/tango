@@ -47,7 +47,7 @@ void main(char[][] args)
         {
             Logger log = Log.getLogger("barrier." ~ Thread.getThis().name());
 
-            log.trace("Starting thread");
+            log.trace("Starting thread " ~ Thread.getThis().name());
         }
 
         try

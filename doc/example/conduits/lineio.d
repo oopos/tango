@@ -4,6 +4,8 @@ private import  tango.io.Console,
 
 private import  tango.io.stream.Lines;
 
+private import  tango.io.Stdout;
+
 /*******************************************************************************
 
         Read a file line-by-line, sending each one to the console. This
@@ -19,10 +21,13 @@ void main (char[][] args)
            {
            // open a file for reading
            scope file = new File (args[1]);
-
+		   auto num = 0;
            // process file one line at a time
            foreach (line; new Lines!(char)(file))
-                    Cout (line).newline;
+				{
+				++ num;
+                Stdout.formatln("    {} {}", num, line);
+				}
            }
         else
            Cout ("usage: lineio filename").newline;
