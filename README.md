@@ -44,6 +44,13 @@ There is also an experimental Makefile building system. You can invoke it like s
     make -f build/Makefile static-lib -j4 DC=ldc2
     make -f build/Makefile install-static-lib install-modules DC=ldc2
 
+
+Example dmd.conf
+------
+[Environment]
+DFLAGS=-I%@P%/../../src/phobos -I%@P%/../../src/druntime/import -L-L%@P%/../lib64 -I%@P%/../../src/tango -L-ltango -L--no-warn-search-mismatch -L--export-dynamic
+
+
 Notable version statements
 -------
 
