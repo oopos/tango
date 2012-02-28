@@ -265,7 +265,7 @@ version (Posix)
          */
         override public int select(TimeSpan timeout)
         {
-            int to = (timeout != TimeSpan.max ? cast(int) timeout.millis : -1);
+            int to = (TimeSpan.max != timeout ? cast(int) timeout.millis : -1);
 
             debug (selector)
                 Stdout.formatln("--- PollSelector.select({0} ms): waiting on {1} handles",

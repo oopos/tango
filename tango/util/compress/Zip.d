@@ -29,7 +29,6 @@ TODO
 import tango.core.ByteSwap : ByteSwap;
 import tango.io.device.Array : Array;
 import tango.io.device.File : File;
-import Path = tango.io.Path;
 import tango.io.device.FileMap : FileMap;
 import tango.io.stream.Zlib : ZlibInput, ZlibOutput;
 import tango.util.digest.Crc32 : Crc32;
@@ -2246,7 +2245,7 @@ void dosToTime(ushort dostime, ushort dosdate, out Time time)
 void timeToDos(Time time, out ushort dostime, out ushort dosdate)
 {
     // Treat Time.min specially
-    if( time == Time.min )
+    if( Time.min == time )
         time = WallClock.now;
 
     // *muttering happily*
